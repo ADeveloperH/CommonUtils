@@ -27,29 +27,30 @@ public class CheckStrings {
     private static List<String> lackWhiteList = new ArrayList<>();
 
     static {
-        placeHolderWhiteList.add("deep_clean_des_dialog");
-        placeHolderWhiteList.add("battery_running_title1");
-        placeHolderWhiteList.add("permission_desc_accessibility");
-        placeHolderWhiteList.add("permission_desc_selfstart");
-
-
-        lackWhiteList.add("default_notification_channel_id");
-        lackWhiteList.add("clean_app_percent");
-        lackWhiteList.add("spalash_skip");
+//        placeHolderWhiteList.add("deep_clean_des_dialog");
+//        placeHolderWhiteList.add("battery_running_title1");
+//        placeHolderWhiteList.add("permission_desc_accessibility");
+//        placeHolderWhiteList.add("permission_desc_selfstart");
+//
+//
+//        lackWhiteList.add("default_notification_channel_id");
+//        lackWhiteList.add("clean_app_percent");
+//        lackWhiteList.add("spalash_skip");
 
 
         stringsFolderMap.put("values", "英语");
-        stringsFolderMap.put("values-cs-rCZ", "捷克");
-        stringsFolderMap.put("values-de-rDE", "德语");
-        stringsFolderMap.put("values-es-rES", "西班牙语");
-        stringsFolderMap.put("values-fr-rFR", "法语");
+        stringsFolderMap.put("values-ar", "阿拉伯语");
+//        stringsFolderMap.put("values-cs-rCZ", "捷克");
+//        stringsFolderMap.put("values-de-rDE", "德语");
+        stringsFolderMap.put("values-es", "西班牙语");
+//        stringsFolderMap.put("values-fr-rFR", "法语");
         stringsFolderMap.put("values-in-rID", "印尼语");
-        stringsFolderMap.put("values-ja-rJP", "日语");
-        stringsFolderMap.put("values-ko-rKR", "韩语");
-        stringsFolderMap.put("values-pl-rPL", "波兰");
-        stringsFolderMap.put("values-pt-rPT", "葡萄牙语");
+//        stringsFolderMap.put("values-ja-rJP", "日语");
+//        stringsFolderMap.put("values-ko-rKR", "韩语");
+//        stringsFolderMap.put("values-pl-rPL", "波兰");
+        stringsFolderMap.put("values-pt", "葡萄牙语");
         stringsFolderMap.put("values-ru-rRU", "俄语");
-        stringsFolderMap.put("values-sv", "瑞典");
+//        stringsFolderMap.put("values-sv", "瑞典");
         stringsFolderMap.put("values-th-rTH", "泰语");
         stringsFolderMap.put("values-vi-rVN", "越南语");
         stringsFolderMap.put("values-zh-rCN", "中文");
@@ -59,25 +60,43 @@ public class CheckStrings {
 
     //作为对比的语言解析结果
     private static LinkedHashMap<String, String> compareLan = new LinkedHashMap<>();
+    private static LinkedHashMap<String, Integer> placeHolderCountMap = new LinkedHashMap<>();
     //作为对比的语言所在的目录
     public static String COMPARE_LAN = "values";
 
-    public static String PATH_START = "D:\\Repositories\\NoxCleaner\\app\\src\\main\\res\\";
+    public static String PATH_START = "D:\\Repositories\\NoxSecurity\\app\\src\\main\\res\\";
     public static final String PATH_END = "\\strings.xml";
     public static final String PATH_END2 = "\\string.xml";
     public static final String PATH_CONFIG = "checkstrings.config";
 
     public static void main(String[] args) {
-        String jsonStr = readConfig();
-        System.out.println(jsonStr);
-        compareLan = parseXml2(PATH_START + COMPARE_LAN + PATH_END, COMPARE_LAN);
+//        String jsonStr = readConfig();
+//        System.out.println(jsonStr);
+        lackWhiteList.add("app_name");
+        lackWhiteList.add("whatsapp");
+        lackWhiteList.add("line");
+        lackWhiteList.add("wechat");
+        lackWhiteList.add("qq");
+        lackWhiteList.add("private_noti_msg_count");
+        lackWhiteList.add("like_us_on_facebook");
+
+        placeHolderWhiteList.add("battery_running_title1");
+        placeHolderWhiteList.add("permission_desc_accessibility");
+        placeHolderWhiteList.add("permission_desc_selfstart");
+        placeHolderWhiteList.add("deep_clean_des_dialog");
+        placeHolderWhiteList.add("game_permission_desc_accessibility");
+
+        compareLan = parseXml2(PATH_START + COMPARE_LAN + PATH_END, COMPARE_LAN, true);
         for (String key : stringsFolderMap.keySet()) {
             if (!COMPARE_LAN.equals(key)) {
-                parseXml2(PATH_START + key + PATH_END, key);
-                parseXml2(PATH_START + key + PATH_END2, key);
+                parseXml2(PATH_START + key + PATH_END, key, false);
+                parseXml2(PATH_START + key + PATH_END2, key, false);
             }
         }
     }
+
+
+
 
     private static String readConfig() {
         File cacheFile = new File(PATH_CONFIG);
@@ -116,7 +135,7 @@ public class CheckStrings {
         return jsonStr;
     }
 
-    public static LinkedHashMap parseXml2(String filePath, String lan) {
+    public static LinkedHashMap parseXml2(String filePath, String lan, boolean isCompareLan) {
         try {
             if (filePath != null && !filePath.isEmpty() && new File(filePath).exists()) {
                 System.out.println();
@@ -133,7 +152,7 @@ public class CheckStrings {
                         Element eElement = (Element) node;
                         String key = eElement.getAttribute("name");
                         String value = node.getTextContent();
-                        if (!isValide(value) && !placeHolderWhiteList.contains(key)) {
+                        if (!isValide(key, value, isCompareLan) && !placeHolderWhiteList.contains(key)) {
                             invalideKey.add(key);
                         }
                         hashMap.put(key, value);
@@ -175,7 +194,9 @@ public class CheckStrings {
         return list == null || list.isEmpty();
     }
 
-    public static boolean isValide(String value) {
+    public static boolean isValide(String key, String value, boolean isCompareLan) {
+        boolean result = false;
+        int count = 0;
         if (!isEmpty(value)) {
             if (value.contains("%")) {
                 counter = 0;
@@ -209,13 +230,23 @@ public class CheckStrings {
                 }
 
                 if (countS != (countS1 + countS2 + countS3 + countD1 + countD2 + countD3)) {
-                    return false;
+                    result = false;
                 }
+                count = countS;
 
             }
-            return true;
+            result = true;
         }
-        return false;
+        result = false;
+        if (isCompareLan) {
+            placeHolderCountMap.put(key, count);
+        } else {
+            int compLanCount = placeHolderCountMap.get(key);
+            if (count != compLanCount) {
+                result = false;
+            }
+        }
+        return result;
     }
 
     static int counter = 0;
