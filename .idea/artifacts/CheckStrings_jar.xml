@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="CheckStrings:jar">
-    <output-path>$PROJECT_DIR$/../outputjar/checkstrings</output-path>
-    <root id="archive" name="JavaWorkSpace.jar">
-      <element id="module-output" name="JavaWorkSpace" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.7/gson-2.7.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
