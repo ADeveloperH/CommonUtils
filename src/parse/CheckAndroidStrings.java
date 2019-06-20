@@ -151,6 +151,7 @@ public class CheckAndroidStrings {
             if (filePath != null && !filePath.isEmpty() && new File(filePath).exists()) {
                 System.out.println();
                 System.out.println("=====================================================================");
+                System.out.println();
                 System.out.println("当前的语言是：" + lan + ":" + stringsFolderMap.get(lan));
                 Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(filePath));
                 NodeList childNodes = document.getElementsByTagName("string");
@@ -201,6 +202,12 @@ public class CheckAndroidStrings {
                 }
 
                 return curLanHashMap;
+            } else {
+                System.out.println();
+                System.out.println("***********************************************************************************************************");
+                System.out.println("未找到对应文件:" + filePath + "  语言为：" + lan);
+                System.out.println("***********************************************************************************************************");
+                System.out.println();
             }
         } catch (Exception e) {
             System.out.println("e:" + e.getLocalizedMessage());
