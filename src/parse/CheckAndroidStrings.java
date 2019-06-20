@@ -15,43 +15,43 @@ import java.util.List;
 public class CheckAndroidStrings {
 
     /**
-     * key:Òª¼ì²éµÄÓïÑÔÎÄ¼ş¼ĞÃû³Æ
-     * value:¶ÔÓ¦µÄÖĞÎÄÃû³Æ
+     * key:è¦æ£€æŸ¥çš„è¯­è¨€æ–‡ä»¶å¤¹åç§°
+     * value:å¯¹åº”çš„ä¸­æ–‡åç§°
      */
     private static LinkedHashMap<String, String> stringsFolderMap = new LinkedHashMap<>();
 
 
     /**
-     * ĞèÒªºöÂÔµÄ£ºÕ¼Î»·ûÓĞÎÊÌâµÄ key
+     * éœ€è¦å¿½ç•¥çš„ï¼šå ä½ç¬¦æœ‰é—®é¢˜çš„ key
      */
     private static List<String> placeHolderWhiteList = new ArrayList<>();
 
     /**
-     * ĞèÒªºöÂÔµÄ£º¶àÓàµÄ key
+     * éœ€è¦å¿½ç•¥çš„ï¼šå¤šä½™çš„ key
      */
     private static List<String> surplusWhiteList = new ArrayList<>();
 
     /**
-     * ĞèÒªºöÂÔµÄ£ºÈ±ÉÙµÄ key
+     * éœ€è¦å¿½ç•¥çš„ï¼šç¼ºå°‘çš„ key
      */
     private static List<String> lackWhiteList = new ArrayList<>();
 
 
     /**
-     * ×÷Îª¶Ô±ÈµÄÓïÑÔ½âÎö½á¹û:
+     * ä½œä¸ºå¯¹æ¯”çš„è¯­è¨€è§£æç»“æœ:
      * key:key
      * value:value
      */
     private static LinkedHashMap<String, String> compareLanMap = new LinkedHashMap<>();
 
     /**
-     * ×÷Îª¶Ô±ÈµÄÓïÑÔÕ¼Î»·ûµÄ¸öÊı½á¹û:
+     * ä½œä¸ºå¯¹æ¯”çš„è¯­è¨€å ä½ç¬¦çš„ä¸ªæ•°ç»“æœ:
      * key:key
-     * value:Õ¼Î»·ûµÄ¸öÊıĞÅÏ¢µÄBean
+     * value:å ä½ç¬¦çš„ä¸ªæ•°ä¿¡æ¯çš„Bean
      */
     private static LinkedHashMap<String, PlaceholderBean> comparePlaceHolderCountMap = new LinkedHashMap<>();
 
-    //×÷Îª¶Ô±ÈµÄÓïÑÔËùÔÚµÄÄ¿Â¼
+    //ä½œä¸ºå¯¹æ¯”çš„è¯­è¨€æ‰€åœ¨çš„ç›®å½•
     public static String COMPARE_LAN = "values";
 
     public static String PATH_START = "D:\\Repositories\\NoxSecurity\\app\\src\\main\\res\\";
@@ -62,23 +62,23 @@ public class CheckAndroidStrings {
     public static final String PATH_CONFIG = "checkstrings.config";
 
 //    static {
-//        stringsFolderMap.put("values", "Ó¢Óï");
-//        stringsFolderMap.put("values-ar", "°¢À­²®Óï");
-////        stringsFolderMap.put("values-cs-rCZ", "½İ¿Ë");
-//        stringsFolderMap.put("values-de-rDE", "µÂÓï");
-//        stringsFolderMap.put("values-es", "Î÷°àÑÀÓï");
-////        stringsFolderMap.put("values-fr-rFR", "·¨Óï");
-//        stringsFolderMap.put("values-in-rID", "Ó¡ÄáÓï");
-////        stringsFolderMap.put("values-ja-rJP", "ÈÕÓï");
-//        stringsFolderMap.put("values-ko-rKR", "º«Óï");
-////        stringsFolderMap.put("values-pl-rPL", "²¨À¼");
-//        stringsFolderMap.put("values-pt", "ÆÏÌÑÑÀÓï");
-//        stringsFolderMap.put("values-ru-rRU", "¶íÓï");
-////        stringsFolderMap.put("values-sv", "Èğµä");
-//        stringsFolderMap.put("values-th-rTH", "Ì©Óï");
-//        stringsFolderMap.put("values-vi-rVN", "Ô½ÄÏÓï");
-//        stringsFolderMap.put("values-zh-rCN", "ÖĞÎÄ");
-//        stringsFolderMap.put("values-zh-rTW", "·±ÌåÖĞÎÄ");
+//        stringsFolderMap.put("values", "è‹±è¯­");
+//        stringsFolderMap.put("values-ar", "é˜¿æ‹‰ä¼¯è¯­");
+////        stringsFolderMap.put("values-cs-rCZ", "æ·å…‹");
+//        stringsFolderMap.put("values-de-rDE", "å¾·è¯­");
+//        stringsFolderMap.put("values-es", "è¥¿ç­ç‰™è¯­");
+////        stringsFolderMap.put("values-fr-rFR", "æ³•è¯­");
+//        stringsFolderMap.put("values-in-rID", "å°å°¼è¯­");
+////        stringsFolderMap.put("values-ja-rJP", "æ—¥è¯­");
+//        stringsFolderMap.put("values-ko-rKR", "éŸ©è¯­");
+////        stringsFolderMap.put("values-pl-rPL", "æ³¢å…°");
+//        stringsFolderMap.put("values-pt", "è‘¡è„ç‰™è¯­");
+//        stringsFolderMap.put("values-ru-rRU", "ä¿„è¯­");
+////        stringsFolderMap.put("values-sv", "ç‘å…¸");
+//        stringsFolderMap.put("values-th-rTH", "æ³°è¯­");
+//        stringsFolderMap.put("values-vi-rVN", "è¶Šå—è¯­");
+//        stringsFolderMap.put("values-zh-rCN", "ä¸­æ–‡");
+//        stringsFolderMap.put("values-zh-rTW", "ç¹ä½“ä¸­æ–‡");
 //
 //
 //        lackWhiteList.add("app_name");
@@ -101,7 +101,7 @@ public class CheckAndroidStrings {
 
     public static void main(String[] args) {
         readConfig();
-        //ÏÈ½âÎö×÷Îª¶Ô±ÈµÄÓïÑÔÎÄ¼ş
+        //å…ˆè§£æä½œä¸ºå¯¹æ¯”çš„è¯­è¨€æ–‡ä»¶
         compareLanMap = parseXml(PATH_START + COMPARE_LAN + PATH_END, COMPARE_LAN, true);
 
         for (String key : stringsFolderMap.keySet()) {
@@ -112,7 +112,7 @@ public class CheckAndroidStrings {
     }
 
     private static String readConfig() {
-        String jsonStr = "{\"stringsFloderPath\":\"D:\\\\Repositories\\\\NoxSecurity\\\\app\\\\src\\\\main\\\\res\\\\\", \t\"compareLanFolder\": \"values\", \t\"placeHolderWhiteList\": [\"battery_running_title1\", \"permission_desc_accessibility\", \"permission_desc_selfstart\", \"deep_clean_des_dialog\", \"game_permission_desc_accessibility\", \"msg_memory_tip\", \"msg_battery_tip\"], \t\"surplusWhiteList\": [], \t\"lackWhiteList\": [], \t\"stringsFolderMap\": { \t\t\"values\": \"Ó¢Óï\", \t\t\"values-ar\": \"°¢À­²®Óï\", \t\t\"values-cs-rCZ\": \"½İ¿Ë\", \t\t\"values-de-rDE\": \"µÂÓï\", \t\t\"values-es-rES\": \"Î÷°àÑÀÓï\", \t\t\"values-fr-rFR\": \"·¨Óï\", \t\t\"values-in-rID\": \"Ó¡ÄáÓï\", \t\t\"values-ja-rJP\": \"ÈÕÓï\", \t\t\"values-ko-rKR\": \"º«Óï\", \t\t\"values-pl-rPL\": \"²¨À¼\", \t\t\"values-pt-rPT\": \"ÆÏÌÑÑÀÓï\", \t\t\"values-ru-rRU\": \"¶íÓï\", \t\t\"values-sv\": \"Èğµä\", \t\t\"values-th-rTH\": \"Ì©Óï\", \t\t\"values-vi-rVN\": \"Ô½ÄÏÓï\", \t\t\"values-zh-rCN\": \"ÖĞÎÄ\", \t\t\"values-zh-rTW\": \"·±ÌåÖĞÎÄ\" \t} }";
+        String jsonStr = "{\"stringsFloderPath\":\"D:\\\\Repositories\\\\NoxSecurity\\\\app\\\\src\\\\main\\\\res\\\\\", \t\"compareLanFolder\": \"values\", \t\"placeHolderWhiteList\": [\"battery_running_title1\", \"permission_desc_accessibility\", \"permission_desc_selfstart\", \"deep_clean_des_dialog\", \"game_permission_desc_accessibility\", \"msg_memory_tip\", \"msg_battery_tip\"], \t\"surplusWhiteList\": [], \t\"lackWhiteList\": [], \t\"stringsFolderMap\": { \t\t\"values\": \"è‹±è¯­\", \t\t\"values-ar\": \"é˜¿æ‹‰ä¼¯è¯­\", \t\t\"values-cs-rCZ\": \"æ·å…‹\", \t\t\"values-de-rDE\": \"å¾·è¯­\", \t\t\"values-es-rES\": \"è¥¿ç­ç‰™è¯­\", \t\t\"values-fr-rFR\": \"æ³•è¯­\", \t\t\"values-in-rID\": \"å°å°¼è¯­\", \t\t\"values-ja-rJP\": \"æ—¥è¯­\", \t\t\"values-ko-rKR\": \"éŸ©è¯­\", \t\t\"values-pl-rPL\": \"æ³¢å…°\", \t\t\"values-pt-rPT\": \"è‘¡è„ç‰™è¯­\", \t\t\"values-ru-rRU\": \"ä¿„è¯­\", \t\t\"values-sv\": \"ç‘å…¸\", \t\t\"values-th-rTH\": \"æ³°è¯­\", \t\t\"values-vi-rVN\": \"è¶Šå—è¯­\", \t\t\"values-zh-rCN\": \"ä¸­æ–‡\", \t\t\"values-zh-rTW\": \"ç¹ä½“ä¸­æ–‡\" \t} }";
         if (!isEmpty(jsonStr)) {
             ConfigBean configBean = new Gson().fromJson(jsonStr, ConfigBean.class);
             if (configBean != null) {
@@ -152,10 +152,10 @@ public class CheckAndroidStrings {
                 System.out.println();
                 System.out.println("=====================================================================");
                 System.out.println();
-                System.out.println("µ±Ç°µÄÓïÑÔÊÇ£º" + lan + ":" + stringsFolderMap.get(lan));
+                System.out.println("å½“å‰çš„è¯­è¨€æ˜¯ï¼š" + lan + ":" + stringsFolderMap.get(lan));
                 Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(filePath));
                 NodeList childNodes = document.getElementsByTagName("string");
-                System.out.println("×Ü¸öÊı:" + childNodes.getLength());
+                System.out.println("æ€»ä¸ªæ•°:" + childNodes.getLength());
                 LinkedHashMap<String, String> curLanHashMap = new LinkedHashMap<>();
                 List<String> invalideKey = new ArrayList<>();
                 int noTranslateCount = 0;
@@ -165,7 +165,7 @@ public class CheckAndroidStrings {
                         Element eElement = (Element) node;
                         String key = eElement.getAttribute("name");
                         if (isCompareLan) {
-                            //¹ıÂËµô²»ĞèÒª·­ÒëµÄ
+                            //è¿‡æ»¤æ‰ä¸éœ€è¦ç¿»è¯‘çš„
                             if ("false".equals(eElement.getAttribute("translatable")) && !lackWhiteList.contains(key)) {
                                 lackWhiteList.add(key);
                                 noTranslateCount++;
@@ -180,24 +180,24 @@ public class CheckAndroidStrings {
                 }
 
                 if (noTranslateCount > 0) {
-                    System.out.println("translatable Îª false ¸öÊı£º" + noTranslateCount);
+                    System.out.println("translatable ä¸º false ä¸ªæ•°ï¼š" + noTranslateCount);
                 }
 
                 if (!COMPARE_LAN.equals(lan)) {
                     for (String key : compareLanMap.keySet()) {
                         if (!curLanHashMap.containsKey(key) && !lackWhiteList.contains(key)) {
-                            System.out.println("È±ÉÙkey:==============================" + key);
+                            System.out.println("ç¼ºå°‘key:==============================" + key);
                         }
                     }
 
                     for (String key : curLanHashMap.keySet()) {
                         if (!compareLanMap.containsKey(key) && !surplusWhiteList.contains(key)) {
-                            System.out.println("¶àÓàµÄkey:==============================" + key);
+                            System.out.println("å¤šä½™çš„key:==============================" + key);
                         }
                     }
 
                     for (String key : invalideKey) {
-                        System.out.println("Õ¼Î»·ûÓĞÎÊÌâµÄkey£º==============================" + key);
+                        System.out.println("å ä½ç¬¦æœ‰é—®é¢˜çš„keyï¼š==============================" + key);
                     }
                 }
 
@@ -205,7 +205,7 @@ public class CheckAndroidStrings {
             } else {
                 System.out.println();
                 System.out.println("***********************************************************************************************************");
-                System.out.println("Î´ÕÒµ½¶ÔÓ¦ÎÄ¼ş:" + filePath + "  ÓïÑÔÎª£º" + lan);
+                System.out.println("æœªæ‰¾åˆ°å¯¹åº”æ–‡ä»¶:" + filePath + "  è¯­è¨€ä¸ºï¼š" + lan);
                 System.out.println("***********************************************************************************************************");
                 System.out.println();
             }
