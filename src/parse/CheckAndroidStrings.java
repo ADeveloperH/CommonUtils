@@ -61,43 +61,43 @@ public class CheckAndroidStrings {
 
     public static final String PATH_CONFIG = "checkstrings.config";
 
-    static {
-        stringsFolderMap.put("values", "英语");
-        stringsFolderMap.put("values-ar", "阿拉伯语");
-//        stringsFolderMap.put("values-cs-rCZ", "捷克");
-        stringsFolderMap.put("values-de-rDE", "德语");
-        stringsFolderMap.put("values-es", "西班牙语");
-//        stringsFolderMap.put("values-fr-rFR", "法语");
-        stringsFolderMap.put("values-in-rID", "印尼语");
-//        stringsFolderMap.put("values-ja-rJP", "日语");
-        stringsFolderMap.put("values-ko-rKR", "韩语");
-//        stringsFolderMap.put("values-pl-rPL", "波兰");
-        stringsFolderMap.put("values-pt", "葡萄牙语");
-        stringsFolderMap.put("values-ru-rRU", "俄语");
-//        stringsFolderMap.put("values-sv", "瑞典");
-        stringsFolderMap.put("values-th-rTH", "泰语");
-        stringsFolderMap.put("values-vi-rVN", "越南语");
-        stringsFolderMap.put("values-zh-rCN", "中文");
-        stringsFolderMap.put("values-zh-rTW", "繁体中文");
-
-
-        lackWhiteList.add("app_name");
-        lackWhiteList.add("whatsapp");
-        lackWhiteList.add("line");
-        lackWhiteList.add("wechat");
-        lackWhiteList.add("qq");
-        lackWhiteList.add("private_noti_msg_count");
-        lackWhiteList.add("like_us_on_facebook");
-        lackWhiteList.add("default_notification_channel_id");
-
-        placeHolderWhiteList.add("battery_running_title1");
-        placeHolderWhiteList.add("permission_desc_accessibility");
-        placeHolderWhiteList.add("permission_desc_selfstart");
-        placeHolderWhiteList.add("deep_clean_des_dialog");
-        placeHolderWhiteList.add("game_permission_desc_accessibility");
-        placeHolderWhiteList.add("msg_memory_tip");
-        placeHolderWhiteList.add("msg_battery_tip");
-    }
+//    static {
+//        stringsFolderMap.put("values", "英语");
+//        stringsFolderMap.put("values-ar", "阿拉伯语");
+////        stringsFolderMap.put("values-cs-rCZ", "捷克");
+//        stringsFolderMap.put("values-de-rDE", "德语");
+//        stringsFolderMap.put("values-es", "西班牙语");
+////        stringsFolderMap.put("values-fr-rFR", "法语");
+//        stringsFolderMap.put("values-in-rID", "印尼语");
+////        stringsFolderMap.put("values-ja-rJP", "日语");
+//        stringsFolderMap.put("values-ko-rKR", "韩语");
+////        stringsFolderMap.put("values-pl-rPL", "波兰");
+//        stringsFolderMap.put("values-pt", "葡萄牙语");
+//        stringsFolderMap.put("values-ru-rRU", "俄语");
+////        stringsFolderMap.put("values-sv", "瑞典");
+//        stringsFolderMap.put("values-th-rTH", "泰语");
+//        stringsFolderMap.put("values-vi-rVN", "越南语");
+//        stringsFolderMap.put("values-zh-rCN", "中文");
+//        stringsFolderMap.put("values-zh-rTW", "繁体中文");
+//
+//
+//        lackWhiteList.add("app_name");
+//        lackWhiteList.add("whatsapp");
+//        lackWhiteList.add("line");
+//        lackWhiteList.add("wechat");
+//        lackWhiteList.add("qq");
+//        lackWhiteList.add("private_noti_msg_count");
+//        lackWhiteList.add("like_us_on_facebook");
+//        lackWhiteList.add("default_notification_channel_id");
+//
+//        placeHolderWhiteList.add("battery_running_title1");
+//        placeHolderWhiteList.add("permission_desc_accessibility");
+//        placeHolderWhiteList.add("permission_desc_selfstart");
+//        placeHolderWhiteList.add("deep_clean_des_dialog");
+//        placeHolderWhiteList.add("game_permission_desc_accessibility");
+//        placeHolderWhiteList.add("msg_memory_tip");
+//        placeHolderWhiteList.add("msg_battery_tip");
+//    }
 
     public static void main(String[] args) {
         readConfig();
@@ -112,7 +112,7 @@ public class CheckAndroidStrings {
     }
 
     private static String readConfig() {
-        String jsonStr = "{\"stringsFloderPath\":\"D:\\\\Repositories\\\\NoxSecurity\\\\app\\\\src\\\\main\\\\res\\\\\", \t\"compareLanFolder\": \"values\", \t\"placeHolderWhiteList\": [\"battery_running_title1\", \"permission_desc_accessibility\", \"permission_desc_selfstart\", \"deep_clean_des_dialog\", \"game_permission_desc_accessibility\", \"msg_memory_tip\", \"msg_battery_tip\"], \t\"surplusWhiteList\": [], \t\"lackWhiteList\": [\"app_name\", \"whatsapp\", \"line\", \"wechat\", \"qq\", \"private_noti_msg_count\", \"like_us_on_facebook\", \"default_notification_channel_id\"], \t\"stringsFolderMap\": { \t\t\"values\": \"英语\", \t\t\"values-ar\": \"阿拉伯语\", \t\t\"values-cs-rCZ\": \"捷克\", \t\t\"values-de-rDE\": \"德语\", \t\t\"values-es-rES\": \"西班牙语\", \t\t\"values-fr-rFR\": \"法语\", \t\t\"values-in-rID\": \"印尼语\", \t\t\"values-ja-rJP\": \"日语\", \t\t\"values-ko-rKR\": \"韩语\", \t\t\"values-pl-rPL\": \"波兰\", \t\t\"values-pt-rPT\": \"葡萄牙语\", \t\t\"values-ru-rRU\": \"俄语\", \t\t\"values-sv\": \"瑞典\", \t\t\"values-th-rTH\": \"泰语\", \t\t\"values-vi-rVN\": \"越南语\", \t\t\"values-zh-rCN\": \"中文\", \t\t\"values-zh-rTW\": \"繁体中文\" \t} }";
+        String jsonStr = "{\"stringsFloderPath\":\"D:\\\\Repositories\\\\NoxSecurity\\\\app\\\\src\\\\main\\\\res\\\\\", \t\"compareLanFolder\": \"values\", \t\"placeHolderWhiteList\": [\"battery_running_title1\", \"permission_desc_accessibility\", \"permission_desc_selfstart\", \"deep_clean_des_dialog\", \"game_permission_desc_accessibility\", \"msg_memory_tip\", \"msg_battery_tip\"], \t\"surplusWhiteList\": [], \t\"lackWhiteList\": [], \t\"stringsFolderMap\": { \t\t\"values\": \"英语\", \t\t\"values-ar\": \"阿拉伯语\", \t\t\"values-cs-rCZ\": \"捷克\", \t\t\"values-de-rDE\": \"德语\", \t\t\"values-es-rES\": \"西班牙语\", \t\t\"values-fr-rFR\": \"法语\", \t\t\"values-in-rID\": \"印尼语\", \t\t\"values-ja-rJP\": \"日语\", \t\t\"values-ko-rKR\": \"韩语\", \t\t\"values-pl-rPL\": \"波兰\", \t\t\"values-pt-rPT\": \"葡萄牙语\", \t\t\"values-ru-rRU\": \"俄语\", \t\t\"values-sv\": \"瑞典\", \t\t\"values-th-rTH\": \"泰语\", \t\t\"values-vi-rVN\": \"越南语\", \t\t\"values-zh-rCN\": \"中文\", \t\t\"values-zh-rTW\": \"繁体中文\" \t} }";
         if (!isEmpty(jsonStr)) {
             ConfigBean configBean = new Gson().fromJson(jsonStr, ConfigBean.class);
             if (configBean != null) {
@@ -157,17 +157,29 @@ public class CheckAndroidStrings {
                 System.out.println("总个数:" + childNodes.getLength());
                 LinkedHashMap<String, String> curLanHashMap = new LinkedHashMap<>();
                 List<String> invalideKey = new ArrayList<>();
+                int noTranslateCount = 0;
                 for (int i = 0; i < childNodes.getLength(); i++) {
                     Node node = childNodes.item(i);
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         Element eElement = (Element) node;
                         String key = eElement.getAttribute("name");
+                        if (isCompareLan) {
+                            //过滤掉不需要翻译的
+                            if ("false".equals(eElement.getAttribute("translatable")) && !lackWhiteList.contains(key)) {
+                                lackWhiteList.add(key);
+                                noTranslateCount++;
+                            }
+                        }
                         String value = node.getTextContent();
                         if (!placeHolderWhiteList.contains(key) && !isValide(key, value, isCompareLan)) {
                             invalideKey.add(key);
                         }
                         curLanHashMap.put(key, value);
                     }
+                }
+
+                if (noTranslateCount > 0) {
+                    System.out.println("translatable 为 false 个数：" + noTranslateCount);
                 }
 
                 if (!COMPARE_LAN.equals(lan)) {
@@ -182,10 +194,10 @@ public class CheckAndroidStrings {
                             System.out.println("多余的key:==============================" + key);
                         }
                     }
-                }
 
-                for (String key : invalideKey) {
-                    System.out.println("占位符有问题的key：==============================" + key);
+                    for (String key : invalideKey) {
+                        System.out.println("占位符有问题的key：==============================" + key);
+                    }
                 }
 
                 return curLanHashMap;
