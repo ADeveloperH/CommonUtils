@@ -19,7 +19,15 @@ public class PlaceholderBean {
     public boolean equals(Object obj) {
         if (obj instanceof PlaceholderBean) {
             PlaceholderBean compareBean = (PlaceholderBean) obj;
-            return compareBean.count_type1 == count_type1 && compareBean.count_type2 == count_type2 && compareBean.count_type3 == count_type3 && compareBean.count_type4 == count_type4;
+
+            return (compareBean.count_type1 + compareBean.count_type3 + compareBean.count_type4 == count_type1 + count_type3 + count_type4) &&
+                    (compareBean.count_type2 + compareBean.count_type5 + compareBean.count_type6 == count_type2 + count_type5 + count_type6);
+//            return compareBean.count_type1 == count_type1 &&
+//                    compareBean.count_type2 == count_type2 &&
+//                    compareBean.count_type3 == count_type3 &&
+//                    compareBean.count_type4 == count_type4 &&
+//                    compareBean.count_type5 == count_type5 &&
+//                    compareBean.count_type6 == count_type6;
         }
         return false;
     }
